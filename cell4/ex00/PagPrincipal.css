@@ -1,0 +1,121 @@
+/* Estilos generales */
+header {
+    position: absolute; 
+    top: 10%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    text-align: center;
+    margin-bottom: 20px; /* Añadir un margen inferior para evitar solapamiento */
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    transition: background-image 2s ease-in-out;
+    transition-duration: 1s;
+    flex-direction: column; /* Asegurar que los elementos no se apilen horizontalmente */
+}
+
+.logoimg {
+    width: 17rem;
+    display: block;
+    margin: 0 auto;
+    max-width: 100%; /* Asegura que la imagen no se salga del contenedor */
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    padding: 2rem;
+    background-color: rgba(74, 74, 74, 0.7);
+    backdrop-filter: blur(3px);
+    border-radius: 1rem;
+    margin-top: 8rem; /* Ajusta el espacio superior para no solaparse con la imagen */
+    color: white;
+    width: 90%; /* Asegura que el contenedor tenga un ancho adecuado */
+}
+
+.btn {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    width: 100%;
+    font-size: 1.1rem;
+}
+
+.input-group {
+    margin-bottom: 1em;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 0.75em;
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #31383f;
+}
+
+/* Consultas de medios */
+@media (max-width: 768px) {
+    header {
+        top: 5%;
+    }
+
+    .logoimg {
+        width: 12rem;
+    }
+
+    .login-container {
+        margin-top: 6rem;
+        width: 80%;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        top: 3%;
+    }
+
+    .logoimg {
+        width: 10rem;
+    }
+
+    .login-container {
+        padding: 1rem;
+        margin-top: 4rem;
+        width: 90%;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 1.25rem;
+    }
+}

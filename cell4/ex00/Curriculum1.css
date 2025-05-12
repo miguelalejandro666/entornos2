@@ -1,0 +1,188 @@
+/* Reset y estructura general */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    background-image: url('img/abudabi.jpg'); 
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-attachment: fixed;
+    background-position: center; 
+    box-sizing: border-box;
+}
+
+section{
+    height: 80%;
+    width: 80%;
+}
+/* Header */
+header {
+    background-color: rgb(33, 33, 33);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height: 60px;
+    flex-wrap: wrap;
+    position: sticky;
+    top: 0;
+}
+
+
+.logoimg {
+    width: 50px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+main {
+    flex: 1;
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+.foto {
+    width: 200px;
+    height: 200px;
+}
+/* FORMULARIO GENERAL */
+.form-container{
+    background-color: rgba(74, 74, 74, 0.7);
+    color: white;
+    border-radius: 10px;
+    padding: 50px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.form-container a:hover {
+    background-color: #383838;
+}
+
+
+/* RADIO BUTTONS */
+
+.boton {
+    width: 50%;
+    padding: 5px;
+    background: black;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 150000px;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #e40000;
+}
+
+.contactos img {
+    width: 50px;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgb(33, 33, 33);;
+    color: white;
+    margin-top: 35px;
+}
+
+#CuerpoC{
+    text-decoration:none;
+    list-style: none;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .form-container {
+        width: 95%;
+        padding: 15px;
+    }
+
+    .radio-group {
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .form-container {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .form-container {
+        width: 50%;
+        max-width: 600px;
+    }
+}
+
+
+
+#menu ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+   }
+   
+   #menu ul li {
+    background-color:black;
+   }
+
+   #menu ul a {
+    display:block;
+    color:#fff;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+   }
+   
+   #menu ul li {
+    position:relative;
+    float:left;
+    margin:0;
+    padding:0;
+   }
+   
+   #menu ul li:hover {
+    background:darkslateblue;
+   }
+
+#menu ul ul {
+    display:none;
+    position:absolute;
+    top:100%;
+    left:0;
+    background:#eee;
+    padding:0;
+   }  
+   
+   #menu ul ul li {
+    float:none;
+    width:150px
+   }
+   
+   #menu ul ul a {
+    line-height:120%;
+    padding:10px 15px;
+   }
+ 
+   #menu ul li:hover > ul {
+    display:block;
+   }

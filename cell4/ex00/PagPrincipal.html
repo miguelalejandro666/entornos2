@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex00</title>
+    <link rel="stylesheet" href="PagPrincipal.css">
+    <link rel="icon" type="image/png" href="img/42.png">
+</head>
+<body>
+    <header>
+        <img class="logoimg" src="img/42.png">
+    </header>
+    <main>
+        <div class="login-container">
+            <h1>Nuestros curriculums vitae</h1>
+            <p>Elige el curriculum a consultar</p>
+            <!-- Se elimina el formulario para evitar el envío innecesario -->
+            <button class="btn" onclick="curriculum1()">Curriculum 1</button>
+            <button class="btn" onclick="curriculum2()">Curriculum 2</button>
+        </div>
+    </main>
+
+    <script>
+        const images = [
+            "img/abudabi.jpg",
+            "img/estambul.jpg",
+            "img/tokio.jpg",
+            "img/bangkok.jpg",
+        ];
+
+        let currentIndex = 0;
+
+        function changeBackground() {
+            document.body.style.backgroundImage = `url(${images[currentIndex]})`;
+            currentIndex = (currentIndex + 1) % images.length;
+        }
+
+        setInterval(changeBackground, 5000);
+        changeBackground();
+
+        function curriculum1() {
+            window.location.href = 'Curriculum1.html';
+        }
+
+        function curriculum2() {
+            window.location.href = 'Curriculum2.html';
+        }
+    </script>
+</body>
+</html>
