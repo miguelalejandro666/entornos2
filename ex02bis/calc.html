@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="text" id="numerador">
+    <select id="operador">
+        <option value="suma">+</option>
+        <option value="resta">-</option>
+        <option value="multiplicacion">*</option>
+        <option value="division">/</option>
+        <option value="resto">%</option>
+    </select>
+    <input type="text" id="denominador">
+    <input type="submit" value="Try me!" onclick="calculo()" id="resultado">
+</body>
+</html>
+
+<script>
+
+    $(document).ready(function() {
+
+        var tiempo = 5000; 
+        setTimeout(function() {
+            alert("Please use me...");
+        }, tiempo);
+
+        let numerador = $("#numerador");
+        let denominador = $("#denominador");
+        let operador = $("#operador");
+
+        $("#resultado").click(function () {
+
+            if (parseFloat(numerador.val()) >= 0 && parseFloat(denominador.val()) >= 0) {
+                switch(operador.val()) {
+                    case 'suma':
+                        alert(parseFloat(numerador.val()) + parseFloat(denominador.val()));
+                        break;
+                    case 'resta':
+                        alert(parseFloat(numerador.val()) - parseFloat(denominador.val()));
+                        break;
+                    case 'multiplicacion':
+                        alert(parseFloat(numerador.val()) * parseFloat(denominador.val()));
+                        break;
+                    case 'division':
+                        if(parseFloat(denominador.val()) === 0) {
+                            alert('¡Error! No se puede dividir entre 0.');
+                        } else {
+                            alert(parseFloat(numerador.val()) / parseFloat(denominador.val()));
+                        }
+                        break;
+                    case 'resto':
+                        if(parseFloat(denominador.val()) === 0) {
+                            alert('¡Error! No se puede dividir entre 0.');
+                        } else {
+                            alert(parseFloat(numerador.val()) % parseFloat(denominador.val()));
+                        }
+                        break;
+                    default:
+                        alert("Operación no válida.");
+                }
+            } else {
+                alert("Error :C");
+            }
+        });
+    });
+
+</script>
