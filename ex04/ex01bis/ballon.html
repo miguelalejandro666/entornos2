@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ballon</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 100%;
+            transition: all 0.3s ease; 
+        }
+    </style>
+</head>
+<body>
+    <div id="div"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#div").click(function() {
+                var ancho = $("#div").width(); 
+                var alto = $("#div").height(); 
+
+                if (ancho <= 420 && alto <= 420) {
+                    var nuevoAncho = ancho + 10;
+                    var nuevoAlto = alto + 10;
+
+                    $("#div").animate({
+                        width: nuevoAncho,
+                        height: nuevoAlto
+                    }, 50);
+                }
+                else {
+                    var ancho = 200;
+                    var alto = 200;
+
+                    $("#div").animate({
+                        width: ancho,
+                        height: alto
+                    }, 50);
+                }
+
+                var color = $("#div").css("background-color");
+
+                if (color === "rgb(255, 0, 0)") { 
+                    $("#div").css("background-color", "green");
+                } else if (color === "rgb(0, 128, 0)") { 
+                    $("#div").css("background-color", "blue");
+                } else { 
+                    $("#div").css("background-color", "red");
+                }
+            });
+
+            $("#div").mouseout(function() {
+                var ancho = $("#div").width(); 
+                var alto = $("#div").height(); 
+
+                if (ancho > 200 && alto > 200) { 
+                    var nuevoAncho = ancho - 5;
+                    var nuevoAlto = alto - 5;
+
+                    $("#div").animate({
+                        width: nuevoAncho,
+                        height: nuevoAlto
+                    }, 50);
+                }
+
+                var color = $("#div").css("background-color");
+
+                if (color === "rgb(0, 0, 255)") { 
+                    $("#div").css("background-color", "green");
+                } else if (color === "rgb(0, 128, 0)") { 
+                    $("#div").css("background-color", "red");
+                } else { 
+                    $("#div").css("background-color", "blue");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

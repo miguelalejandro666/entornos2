@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>backgroound</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <input type="button" value="Click me" id="boton">
+</body>
+</html>
+
+<script>
+
+    $(document).ready(function() {
+
+        $("#boton").click(function() {
+            const hexadecimal = new Array("0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F");
+            let color_aleatorio = "#";
+            for (let i = 0; i < 6; i++) {
+            let posarray = Math.floor(Math.random() * hexadecimal.length);
+            color_aleatorio += hexadecimal[posarray];
+            $("body").css("background-color", color_aleatorio);
+        }
+        })
+    });
+</script>
